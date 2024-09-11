@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'Blue Ocean';
+    src: url('./fonts/BLUE OCEAN.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CoolveticaCondensed'; 
+    src: url('./fonts/coolvetica condensed rg.otf') format('opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+  
+*{
+    color:#ff8400;
+    font-family: "CoolveticaCondensed", sans-serif;
+}
+
+body{
+    background-color: #000000;
+}
+
+h2{
+    font-family: "Blue Ocean", sans-serif;
+    font-size: 3vw;
+    border: 5px groove #038a94;
+    padding: 50px;
+}
+
+div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.test{
+    font-size: 50px;
+}
+
+
+
