@@ -8,7 +8,7 @@ class MovieGrid extends Component {
         super()
         this.setState = {
             test: 0
-        }
+        };
     }
     render() {
         return (
