@@ -1,6 +1,6 @@
 
 import React from "react";
-import MovieGrid from "./movieGrid/MovieGrid"
+import MovieGrid from "../components/movieGrid/MovieGrid"
 
 const Main = () => {
     return (
