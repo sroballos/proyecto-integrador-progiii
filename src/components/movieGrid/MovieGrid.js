@@ -1,7 +1,8 @@
 import { Component } from "react";
 
-import Movie from "../movie/Movie"
-import "./movieGrid.css"
+
+import "./MovieGrid.css"
+import Movie from "../Movie/Movie";
 
 class MovieGrid extends Component {
     constructor() {
@@ -13,7 +14,7 @@ class MovieGrid extends Component {
     render() {
         return (
             <section className="gridContainer">
-                <Movie />
+                <Movie/>
                 <Movie />
                 <Movie />
                 <Movie />

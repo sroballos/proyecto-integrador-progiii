@@ -1,6 +1,6 @@
 import { Component } from "react";
 
-import "./movie.css"
+import "./Movie.css"
 
 class Movie extends Component {
     constructor() {
