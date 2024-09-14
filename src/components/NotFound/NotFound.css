@@ -1,62 +1,54 @@
-/* General styles for the page */
 .not-found-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
-  background-color: #ff8400;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #ff8400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
-.not-found-title {
-  font-size: 120px;
-  color: #fbfbfb;
-  margin-bottom: 10px;
-  animation: pulse 1.5s infinite;
-}
-
-.not-found-subtitle {
-  font-size: 32px;
-  color: white;
-  margin: 10px 0;
-}
-
-.not-found-text {
-  font-size: 18px;
-  color: #e1d6d6;
-  text-align: center;
-  margin-bottom: 20px;
-  max-width: 600px;
-}
-
-.not-found-home-link {
-  font-size: 16px;
-  color: #fff;
-  background-color: #000000;
-  text-decoration: none;
-  padding: 12px 24px;
-  border-radius: 5px;
-  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.not-found-home-link:hover {
-  background-color: #d46306;
-  box-shadow: 0 8px 20px rgba(14, 16, 19, 0.6);
-  color:#e1d6d6;
-}
-
-/* Animation for the title */
-@keyframes pulse {
-  0% {
-    transform: scale(1);
+  
+.not-found-titulo {
+    font-size: 120px;
+    color: #fbfbfb;
+    margin-bottom: 10px;
+    transition: transform 0.5s ease-in-out;
   }
-  50% {
+  
+.not-found-titulo:hover {
     transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
 }
+  
+  .not-found-subtitle {
+    font-size: 32px;
+    color: white;
+    margin: 10px 0;
+  }
+  
+  .not-found-text {
+    font-size: 18px;
+    color: #e1d6d6;
+    text-align: center;
+    margin-bottom: 20px;
+    max-width: 600px;
+  }
+  
+  .not-found-home-link {
+    font-size: 16px;
+    color: #fff;
+    background-color: #000000;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .not-found-home-link:hover {
+    background-color: #d46306;
+    box-shadow: 0 8px 20px rgba(14, 16, 19, 0.6);
+    color:#e1d6d6;
+  }
+  
+  
