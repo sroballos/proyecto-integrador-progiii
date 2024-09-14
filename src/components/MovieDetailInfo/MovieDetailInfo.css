@@ -4,10 +4,11 @@
     align-items: center;
     padding: 20px;
     gap: 20px;
+    width: 80vw;
 }
 
 .movie-detail img {
-    width: 30vw;
+    width: 35vw;
     height: auto;
     object-fit: cover;
 }

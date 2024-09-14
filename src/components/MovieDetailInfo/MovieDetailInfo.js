@@ -45,9 +45,9 @@ class MovieDetail extends Component {
                 ))}
               </div>
 
-              <button>Agregar a Favoritos</button>
               <p>Fecha de estreno: {this.state.data.release_date}</p>
               <p>Duración en minutos: {this.state.data.runtime}</p>
+              <button>Agregar a Favoritos</button>
               <h4>{this.state.data.overview}</h4>
             </div>
           </div>
