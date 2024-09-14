@@ -3,7 +3,7 @@ import "./styles.css";
 import ReactDOM from "react-dom/client";
 
 import Main from "./pages/Main";
-import NotFound from "./pages/NotFound";
+import NotFound from "./components/NotFound/NotFound";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import MovieDetail from "./pages/MovieDetail";
