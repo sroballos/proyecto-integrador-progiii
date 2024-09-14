@@ -5,8 +5,10 @@ import MovieGrid from "../components/MovieGrid/MovieGrid"
 const Main = () => {
     return (
         <>
-        <h2 className="arete">Areté</h2>
-        <h3 className="test">Test</h3>
+        <h3 className="test">Lorem Ipsum 1</h3>
+        <MovieGrid />
+
+        <h3 className="test">Lorem Ipsum 2</h3>
         <MovieGrid />
         </>
     );

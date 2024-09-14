@@ -1,3 +1,4 @@
+//import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { Component } from "react";
 
 
@@ -7,7 +8,7 @@ import Movie from "../Movie/Movie";
 class MovieGrid extends Component {
     constructor() {
         super()
-        this.setState = {
+        this.state = {
             test: 0
         };
     }
