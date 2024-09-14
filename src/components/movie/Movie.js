@@ -12,7 +12,7 @@ class Movie extends Component {
     render() {
         return (
             <section className="movieContainer">
-                <img></img>
+                <img alt='a'></img>
                 <h2>Título</h2>
                 <button>Ver Descripción</button>
                 <p>Descripción</p>

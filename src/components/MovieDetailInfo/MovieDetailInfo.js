@@ -24,8 +24,8 @@ class MovieDetail extends Component {
             <h2>Hola, soy el MovieDetail</h2>
             {this.state.data.length > 0 ? (
                 <>
-                    <h3>{this.state.data[1].title}</h3> 
-                    <img src={`https://image.tmdb.org/t/p/w300${this.state.data[1].poster_path}`} alt='no'/>
+                    <h3>{this.state.data[4].title}</h3> 
+                    <img src={`https://image.tmdb.org/t/p/w300${this.state.data[4].poster_path}`} alt='no'/>
                 </>
                 ) : (
                     <h3>Cargando...</h3>  

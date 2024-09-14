@@ -1,6 +1,6 @@
 import { Component } from "react";
 
-import "./header.css"
+import "./Header.css"
 
 class Header extends Component {
     constructor() {
