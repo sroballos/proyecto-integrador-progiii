@@ -20,21 +20,21 @@
     transform: scale(1.05);
 }
   
-  .not-found-subtitle {
+.not-found-subtitulo {
     font-size: 32px;
     color: white;
     margin: 10px 0;
-  }
+}
   
-  .not-found-text {
+.not-found-texto {
     font-size: 18px;
     color: #e1d6d6;
     text-align: center;
     margin-bottom: 20px;
     max-width: 600px;
-  }
+}
   
-  .not-found-home-link {
+.not-found-home-link {
     font-size: 16px;
     color: #fff;
     background-color: #000000;
@@ -43,12 +43,12 @@
     border-radius: 5px;
     box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  }
+}
   
-  .not-found-home-link:hover {
+.not-found-home-link:hover {
     background-color: #d46306;
     box-shadow: 0 8px 20px rgba(14, 16, 19, 0.6);
     color:#e1d6d6;
-  }
+}
   
   
