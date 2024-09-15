@@ -1,6 +1,6 @@
 import { Component } from "react";
 
-import "./footer.css"
+import "./Footer.css"
 
 class Footer extends Component {
     constructor(props) {
