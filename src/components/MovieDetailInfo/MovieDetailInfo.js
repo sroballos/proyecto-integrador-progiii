@@ -12,7 +12,7 @@ class MovieDetail extends Component {
   }
 
   componentDidMount() {
-    fetch("https://api.themoviedb.org/3/movie/134?language=en-US", options)
+    fetch("https://api.themoviedb.org/3/movie/238?language=en-US", options)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
