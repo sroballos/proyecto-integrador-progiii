@@ -1,19 +1,24 @@
 import { Component } from "react";
 import { options } from "../../options";
-import Loader from "../Loader/Loader";
+import Loader from "../../components/Loader/Loader";
 
 import "./MovieDetailInfo.css";
 
 class MovieDetail extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       data: [],
     };
   }
 
+  
+
   componentDidMount() {
-    fetch("https://api.themoviedb.org/3/movie/238?language=en-US", options)
+    
+    const id= this.props.id
+
+    fetch(`https://api.themoviedb.org/3/movie/${id}?language=en-US`, options)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -36,6 +41,7 @@ class MovieDetail extends Component {
             <div className="movie-info">
               <h1>{this.state.data.title}</h1>
               <p>Rating: {this.state.data.vote_average}</p>
+              <p>{this.props.id}</p>
 
               <div className="genres">
                 <p>Géneros: </p>

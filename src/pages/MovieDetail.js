@@ -2,10 +2,10 @@
 import MovieDetailInfo from '../components/MovieDetailInfo/MovieDetailInfo';
 
 
-const MovieDetail = () => {
+const MovieDetail = (props) => {
     return (
         <>
-            <MovieDetailInfo/>
+            <MovieDetailInfo id={props.match.params.id}/> 
 
         </>
     );
