@@ -32,7 +32,7 @@ class MovieGrid extends Component {
   render() {
     return (
       <section className="gridContainer">
-        {this.state.movies == null ? <Loader /> : this.state.movies.map((movie, idx) => idx < 5 ? <Movie title = {movie.original_title} desc = {movie.overview} img = {movie.backdrop_path} id = {movie.id} /> : "")}
+        {this.state.movies == null ? <Loader /> : this.state.movies.map((movie, idx) => idx < 5 ? <Movie title = {movie.original_title} desc = {movie.overview} img = {movie.poster_path} id = {movie.id} /> : "")}
       </section>
     );
   }
