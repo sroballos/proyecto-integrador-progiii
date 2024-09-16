@@ -1,5 +1,6 @@
 
 import React from "react";
+import {Link} from "react-router-dom";
 import './NotFound.css';
 
 const NotFound = () => {
@@ -10,7 +11,7 @@ const NotFound = () => {
         <p className="not-found-texto">
             Estas buscando una página que no existe.
         </p>
-        <a href="/" className="not-found-home-link">Volve al inicio</a>
+        <Link to="/" className="not-found-home-link">Volve al inicio</Link>
     </div>
     );
   }
