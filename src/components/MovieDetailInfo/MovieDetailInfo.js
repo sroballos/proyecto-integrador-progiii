@@ -1,8 +1,8 @@
 import { Component } from "react";
 import { options } from "../../options";
-import Loader from "../../components/Loader/Loader";
 
 import "./MovieDetailInfo.css";
+import Loader from "../Loader/Loader";
 
 class MovieDetail extends Component {
   constructor(props) {

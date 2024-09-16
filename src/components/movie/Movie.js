@@ -11,9 +11,57 @@ class Movie extends Component {
       title: title,
       desc: desc,
       img: img,
-      id: id
+      id: id,
+      esFavorito: false
     };
   }
+
+  agregarFavorito(){
+    const storage = localStorage.getItem('favoritos')
+    if (storage !== null){
+        const parsedArray = JSON.parse(storage) //ahora esta en formato JS
+        parsedArray.push(this.props.id) //con esto lo guardamos
+        const stringArray = JSON.stringify(parsedArray) //lo convierte
+        localStorage.setItem('favoritos', stringArray) //le paso el nombre del dato que quiero guardar, y el dato
+
+
+    }else{
+        const primerMovie= [this.props.id]
+        const stringArray = JSON.stringify(primerMovie) //lo convierte
+        localStorage.setItem('favoritos', stringArray) //le paso el nombre del dato que quiero guardar, y el dato
+
+    }
+    this.setState({
+        esFavorito: true
+    })
+  }
+
+  componentDidMount(){
+    const storage = localStorage.getItem('favoritos')
+    if (storage !== null){
+        const parsedArray = JSON.parse(storage)
+        const estaEnFavoritos = parsedArray.includes(this.props.id) //esto devuelve true o false
+        this.setState({
+            esFavorito : estaEnFavoritos //true or false
+        })
+    }
+  }
+
+  sacarFavorito(){
+    const storage = localStorage.getItem('favoritos')
+    const parsedArray = JSON.parse(storage) //ahora esta en formato JS
+    //tengo que ver si tengo el id de una pelicula para ver si esta o no en favoritos
+    const favoritosRestantes = parsedArray.filter(id => id !== this.props.id)
+    const stringArray = JSON.stringify(favoritosRestantes) //lo convierte
+    localStorage.setItem('favoritos', stringArray) //le paso el nombre del dato que quiero guardar, y el dato
+    this.setState({
+        esFavorito: false
+    })
+
+  }
+
+
+
   render() {
     return (
       <>
@@ -27,7 +75,7 @@ class Movie extends Component {
             <p>{this.state.desc}</p>
             <Link to = {`/detail/${this.state.id}`}><button>Ir a Detalle</button>
             </Link>
-            <button>Agregar / Quitar de Favoritos</button>
+            <button onClick={()=> this.state.esFavorito ? this.agregarFavorito() : this.sacarFavorito()}>{!this.state.esFavorito ? 'agregar a favoritos' : 'sacar de favoritos'}</button>
           </section>
         )}
       </>
