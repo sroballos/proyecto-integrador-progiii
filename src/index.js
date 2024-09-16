@@ -7,6 +7,7 @@ import NotFound from "./components/NotFound/NotFound";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import MovieDetail from "./pages/MovieDetail";
+import SeeAll from "./pages/SeeAll/SeeAllTR"
 
 
 import { BrowserRouter } from "react-router-dom";
@@ -21,6 +22,7 @@ root.render(
     <Switch>
       <Route exact path="/" component={Main} />
       <Route path='/detail/:id' component={MovieDetail} />
+      <Route exact path='/vertodas' component={SeeAll} />
 
       {/* el NotFound va a lo último */}
       <Route component={NotFound} />
