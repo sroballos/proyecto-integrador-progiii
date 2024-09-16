@@ -1,11 +1,14 @@
 import { Component } from "react";
 
 
-//class Loader extends Component {
-//    constructor(props){
-//        super(props)
-//    }
-//}
+const Loader = () =>{
+    return (
+        <div className = "loader">
+            <img src="./images/homero_loader.gif" />
+            
+        </div>
+    )
+}
     
 
 

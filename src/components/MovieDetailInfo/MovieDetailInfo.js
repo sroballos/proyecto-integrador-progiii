@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { options } from "../../options";
+import Loader from "../Loader/Loader";
 
 import "./MovieDetailInfo.css";
 
@@ -52,7 +53,7 @@ class MovieDetail extends Component {
             </div>
           </div>
         ) : (
-          <h3>Cargando...</h3>
+          <Loader/>
         )}
       </>
     );
