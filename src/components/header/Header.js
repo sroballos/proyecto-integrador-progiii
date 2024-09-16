@@ -1,4 +1,5 @@
 import { Component } from "react";
+import Navbar from "../NavBar/NavBar";
 
 import "./Header.css"
 
@@ -12,9 +13,9 @@ class Header extends Component {
     render() {
         return (
             <header className="arete">
-                <p>test</p>
+                <Navbar izquierda/>
                 <h2>Areté</h2>
-                <p>test2</p>
+                <Navbar/>
             </header>
         );
     }
