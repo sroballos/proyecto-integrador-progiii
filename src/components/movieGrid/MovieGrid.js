@@ -5,6 +5,8 @@ import { Component } from "react";
 import "./MovieGrid.css"
 import Movie from "../Movie/Movie";
 
+//MovieGrid tiene que ser reutilizado en cada componente. Simplemente cambian los props que le pasamos.
+
 class MovieGrid extends Component {
     constructor() {
         super()

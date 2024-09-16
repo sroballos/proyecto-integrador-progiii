@@ -1,4 +1,4 @@
-import "./Navbar.css"
+import "./NavBar.css"
 import { Link } from "react-router-dom"
 
 const Navbar = () => {
@@ -16,6 +16,5 @@ const Navbar = () => {
     )
 }
 //Hola, el navbar tiene que ir adentro del header. 
-//y todos los componentes van con la primer letra en mayúscula
 
 export default Navbar
