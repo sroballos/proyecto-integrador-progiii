@@ -20,7 +20,7 @@ root.render(
 
     <Switch>
       <Route exact path="/" component={Main} />
-      <Route path='/detail' component={MovieDetail} />
+      <Route path='/detail/:id' component={MovieDetail} />
 
       {/* el NotFound va a lo último */}
       <Route component={NotFound} />
