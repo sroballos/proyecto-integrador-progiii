@@ -5,6 +5,11 @@
     border: 5px solid #8f0101;
     border-radius: 30px; 
     padding: 20px;
+    max-width: 15%;
+}
+
+.movieContainer img{
+    max-width: 95%;
 }
 
 button{
