@@ -36,6 +36,10 @@
     margin: 10px;
 }
 
+.movie-info h4{
+    font-size: 25px;
+}
+
 
 @media (max-width: 1000px) {
     .movie-detail {
