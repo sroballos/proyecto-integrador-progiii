@@ -1,12 +1,8 @@
-//import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { Component } from "react";
-
 import "./MovieGrid.css";
 import Movie from "../Movie/Movie";
-import Loader from "../../components/Loader/Loader"
+import Loader from "../../components/Loader/Loader";
 import { options } from "../../options";
-
-//MovieGrid tiene que ser reutilizado en cada componente. Simplemente cambian los props que le pasamos.
 
 class MovieGrid extends Component {
   constructor(props) {
@@ -22,9 +18,9 @@ class MovieGrid extends Component {
       .then((response) => response.json())
       .then((data) => {
         this.setState({
-            movies: data.results
-        })
-        console.log(data)
+          movies: data.results
+        });
+        console.log(data);
       })
       .catch((err) => console.log(err));
   }
@@ -32,7 +28,23 @@ class MovieGrid extends Component {
   render() {
     return (
       <section className="gridContainer">
-        {this.state.movies == null ? <Loader /> : this.state.movies.map((movie, idx) => idx < 5 ? <Movie title = {movie.original_title} desc = {movie.overview} img = {movie.poster_path} id = {movie.id} /> : "")}
+        {this.state.movies == null ? (
+          <Loader />
+        ) : (
+          this.state.movies.map((movie, idx) =>
+            idx < 5 ? (
+              <Movie
+                key={movie.id}
+                title={movie.original_title}
+                desc={movie.overview}
+                img={movie.poster_path}
+                id={movie.id}
+              />
+            ) : (
+              ""
+            )
+          )
+        )}
       </section>
     );
   }

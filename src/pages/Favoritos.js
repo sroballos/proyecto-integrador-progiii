@@ -1,51 +1,66 @@
-import { Component } from 'react'
+import { Component } from 'react';
+import Loader from '../components/Loader/Loader';
+import Movie from '../components/Movie/Movie';
+import { options } from '../options';
 
 export class Favoritos extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      movies: [],
+      isLoading: true,
+    };
+  }
 
+  componentDidMount() {
+    const storage = localStorage.getItem('favoritos');
+    
+    if (storage !== null) {
+      const parsedArray = JSON.parse(storage);
 
-    constructor(props){
-        super(props)
-
-        this.state = {
-            movies : [],
-            isLoading : true
-        }
-
-    }
-
-    componentDidMount(){
-
+      Promise.all(
+        parsedArray.map((id) => 
+          fetch(`https://api.themoviedb.org/3/movie/${id}?language=en-US`, options)
+            .then(response => response.json())
+        )
+      ).then((movies) => {
         this.setState({
-            isLoading : true //pongo en true de vuelta por las dudas
-        })
-
-        const parsedArray = JSON.parse(storage)
-
-        Promise.all( //como va a tardar, lo encierro en el promise para que resuelva primero y despues muestre todo
-
-        parsedArray.map((id)=>{ //para cada id, pedimos la data a la API.
-            fetch('url de cada pelicula con su id')
-                .then(response => response.json())
-                .then( movie=> 
-                    this.setState({
-                        movies : [...this.state.movies, movie] //esto crea un nuevo array con lo que ya tenía, y le agrega lo nuevo
-                    })
-                )
-        })
-        ) //termina el Promise.all()
-
-        this.setState({
-            isLoading : false  //ahora si lo pongo en false
-        })
+          movies: movies,
+          isLoading: false
+        });
+      }).catch((err) => console.error(err));
+    } else {
+      this.setState({
+        isLoading: false
+      });
     }
+  }
+
   render() {
     return (
       <div>
-        {!this.state.isLoading ? <>lo que quiera poner</> 
-        : <p>loading...</p>}
+        {!this.state.isLoading ? (
+          <section className="gridContainer">
+            {this.state.movies.length > 0 ? (
+              this.state.movies.map((movie) => (
+                <Movie
+                  key={movie.id}
+                  title={movie.original_title}
+                  desc={movie.overview}
+                  img={movie.poster_path}
+                  id={movie.id}
+                />
+              ))
+            ) : (
+              <p>No hay favoritos guardados.</p>
+            )}
+          </section>
+        ) : (
+          <Loader />
+        )}
       </div>
-    )
+    );
   }
 }
 
-export default Favoritos
+export default Favoritos;

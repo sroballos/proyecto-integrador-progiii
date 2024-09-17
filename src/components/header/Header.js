@@ -13,12 +13,12 @@ class Header extends Component {
   render() {
     return (
       <header className="arete">
-        <ul class="main-nav">
+        <ul className="main-nav">
           <li>
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/about">Favoritos</Link>
+            <Link to="/favorites">Favoritos</Link>
           </li>
           <li>
             <Link to="/personajes">Ver todas</Link>
