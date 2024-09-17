@@ -2,6 +2,7 @@ import { Component } from 'react';
 import Loader from '../components/Loader/Loader';
 import Movie from '../components/Movie/Movie';
 import { options } from '../options';
+import NotFav from '../components/NoFav/NoFav';
 
 export class Favoritos extends Component {
   constructor(props) {
@@ -52,7 +53,7 @@ export class Favoritos extends Component {
                 />
               ))
             ) : (
-              <p>No hay favoritos guardados.</p>
+              <NotFav/>
             )}
           </section>
         ) : (
