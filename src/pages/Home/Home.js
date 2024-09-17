@@ -1,9 +1,9 @@
 
 import React from "react";
 import MovieGrid from "../../components/MovieGrid/MovieGrid"
-import "./Main.css"
+import "./Home.css"
 
-const Main = () => {
+const Home = () => {
     return (
         <>
         <h3 className="intro">Más Populares</h3>
@@ -18,5 +18,5 @@ const Main = () => {
     );
   }
   
-  export default Main;
+  export default Home;
   

@@ -1,7 +1,7 @@
 import "./styles.css";
 
 import ReactDOM from "react-dom/client";
-import Main from "./pages/Main/Main";
+import Home from "./pages/Home/Home";
 import NotFound from "./components/NotFound/NotFound";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
@@ -17,7 +17,7 @@ root.render(
     <Header />
 
     <Switch>
-      <Route exact path="/" component={Main} />
+      <Route exact path="/" component={Home} />
       <Route path="/detail/:id" component={MovieDetail} />
       <Route exact path="/seeAll" component={SeeAll} />
       <Route path="/favorites" component={Favoritos} />
