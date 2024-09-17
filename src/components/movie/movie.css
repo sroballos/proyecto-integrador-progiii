@@ -6,6 +6,7 @@
     border-radius: 30px; 
     padding: 20px;
     max-width: 15%;
+    box-shadow: 5px 5px 25px #ff8400;
 }
 
 .movieContainer img{
@@ -16,4 +17,10 @@ button{
     background-color: #f3fa8e;
     border: 0px;
     margin: 3px;
+}
+
+.title{
+    border-bottom: 2px solid #ff8400;
+    border-left: 2px solid #ff8400;
+    padding: 7px;
 }

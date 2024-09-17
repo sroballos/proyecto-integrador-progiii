@@ -5,6 +5,10 @@
     padding: 20px;
     gap: 20px;
     width: 80vw;
+    border: 5px solid #8f0101;
+    box-shadow: 10px 10px 50px #8f0101;
+    border-radius: 30px;
+    margin: 30px;
 }
 
 .movie-detail img {
@@ -27,6 +31,11 @@
     margin-right: 4px;
     margin-left: 5px;
 }
+.movie-info p{
+    font-size: 25px;
+    margin: 10px;
+}
+
 
 @media (max-width: 1000px) {
     .movie-detail {

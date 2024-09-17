@@ -1,14 +1,12 @@
 //import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { Component } from "react";
 
-import "./MovieGrid.css";
 import Movie from "../Movie/Movie";
 import Loader from "../../components/Loader/Loader"
 import { options } from "../../options";
 
-//MovieGrid tiene que ser reutilizado en cada componente. Simplemente cambian los props que le pasamos.
 
-class MovieGrid extends Component {
+class SeeAll extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -18,7 +16,7 @@ class MovieGrid extends Component {
   }
 
   componentDidMount() {
-    fetch(this.state.url, options)
+    fetch("https://api.themoviedb.org/3/movie/popular?language=en-US&page=1", options)
       .then((response) => response.json())
       .then((data) => {
         this.setState({
@@ -32,10 +30,10 @@ class MovieGrid extends Component {
   render() {
     return (
       <section className="gridContainer">
-        {this.state.movies == null ? <Loader /> : this.state.movies.map((movie, idx) => idx < 5 ? <Movie title = {movie.original_title} desc = {movie.overview} img = {movie.poster_path} id = {movie.id} /> : "")}
+        {this.state.movies == null ? <Loader /> : this.state.movies.map((movie, idx) => <Movie title = {movie.original_title} desc = {movie.overview} img = {movie.poster_path} id = {movie.id} />)}
       </section>
     );
   }
 }
 
-export default MovieGrid;
+export default SeeAll;
