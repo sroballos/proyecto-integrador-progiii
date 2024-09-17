@@ -88,7 +88,7 @@ class Movie extends Component {
                 <p>{this.state.desc}</p>
               </>
             )}
-            <Link to={`/detail/${this.state.id}`}>
+            <Link className='esteLinkMolestaAlCss' to={`/detail/${this.state.id}`}>
               <button>Ir a Detalle</button>
             </Link>
             <button onClick={() =>

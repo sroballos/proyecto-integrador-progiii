@@ -18,9 +18,9 @@ root.render(
 
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route path="/detail/:id" component={MovieDetail} />
+      <Route exact path="/detail/:id" component={MovieDetail} />
       <Route exact path="/seeAll" component={SeeAll} />
-      <Route path="/favorites" component={Favoritos} />
+      <Route exact path="/favorites" component={Favoritos} />
 
       {/* el NotFound va a lo último */}
       <Route component={NotFound} />

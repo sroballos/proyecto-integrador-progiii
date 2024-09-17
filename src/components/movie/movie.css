@@ -18,6 +18,15 @@ button{
     background-color: #f3fa8e;
     border: 0px;
     margin: 3px;
+    font-size: 19px;
+    width: 100%;
+}
+
+.esteLinkMolestaAlCss{
+    width: 100%;
+    margin-right: 5px;
+    padding: 0px;
+    
 }
 
 .title{

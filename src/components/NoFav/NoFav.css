@@ -1,0 +1,13 @@
+.NoFav{
+    display: flex;
+    width: 65vw;
+    height: 30vh;
+    background-color: orangered;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.NoFav h2{
+    color: black;
+}
