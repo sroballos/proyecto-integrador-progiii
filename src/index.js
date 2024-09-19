@@ -8,8 +8,10 @@ import Header from "./components/Header/Header";
 import MovieDetail from "./pages/MovieDetail";
 import SeeAll from "./pages/SeeAll/SeeAllTR";
 import Favoritos from "./pages/Favoritos";
+import SearchResults from "./components/SearchResults/SearchResults";
 
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -21,6 +23,7 @@ root.render(
       <Route exact path="/detail/:id" component={MovieDetail} />
       <Route exact path="/seeAll" component={SeeAll} />
       <Route exact path="/favorites" component={Favoritos} />
+      <Route exact path="/search" component={SearchResults}/>
 
       {/* el NotFound va a lo último */}
       <Route component={NotFound} />

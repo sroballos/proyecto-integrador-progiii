@@ -22,7 +22,7 @@ export class SearchForm extends Component {
     render() {
         return (
         <div>
-            <input onChange={()=> this.handleInputChange(e)} type="text" name="query" value={this.state.query}/>
+            <input onChange={(e)=> this.handleInputChange(e)} type="text" name="query" value={this.state.query}/>
             <button onClick={()=> this.handleInputSubmit()} >Search Movie</button>
         </div>
         )
