@@ -10,6 +10,7 @@ class MovieGrid extends Component {
     this.state = {
       url: props.url,
       movies: null,
+      limit: Number(props.limit),
     };
   }
 
@@ -32,7 +33,7 @@ class MovieGrid extends Component {
           <Loader />
         ) : (
           this.state.movies.map((movie, idx) =>
-            idx < 5 ? (
+            idx < this.state.limit ? (
               <Movie
                 key={movie.id}
                 title={movie.original_title}
