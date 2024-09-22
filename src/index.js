@@ -26,7 +26,7 @@ root.render(
       <Route exact path="/favorites" component={Favoritos} />
       <Route exact path="/popular" component={Popular} />
       <Route exact path="/toprated" component={Best} />
-      <Route exact path="/search" component={SearchResults}/>
+      <Route exact path="/SearchResults" component={SearchResults}/>
 
       {/* el NotFound va a lo último */}
       <Route component={NotFound} />
