@@ -25,7 +25,7 @@ export class SearchForm extends Component {
         return (
         <div>
             <input onChange={(e)=> this.handleInputChange(e)} type="text" name="query" value={this.state.query} placeholder="Buscar película"/>
-            <button onClick={()=> this.handleInputSubmit()} >Search Movie</button>
+            <button className="boton" onClick={()=> this.handleInputSubmit()} >Search Movie</button>
         
         </div>
         )

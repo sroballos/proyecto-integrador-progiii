@@ -1,0 +1,10 @@
+
+.searchResults {
+    text-align: center; 
+    margin: 10px 0;    /* Espacio vertical */
+    font-size: 24px;   /* Tamaño de fuente más grande */
+    font-weight: bold; /* Negrita */
+    color: orange;       /* Color de texto más suave */
+    border-radius: 8px;/* Esquinas redondeadas */
+    
+  }
