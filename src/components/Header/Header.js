@@ -3,10 +3,11 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 import "./Header.css";
 import SearchForm from "../SearchForm/SearchForm";
+import { withRouter } from "react-router-dom";
 
 class Header extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       test: true,
     };
@@ -28,7 +29,7 @@ class Header extends Component {
         <h2>Areté</h2>
         <ul className="user">
           <li>
-            <SearchForm/>
+            <SearchForm history={this.props.history} />
           </li>
         </ul>
 
@@ -38,4 +39,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default withRouter(Header);

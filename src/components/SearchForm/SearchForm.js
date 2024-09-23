@@ -1,5 +1,6 @@
 import {Component} from "react";
 import "./SearchForm.css"
+import { withRouter } from "react-router-dom";
 
 export class SearchForm extends Component {
     
@@ -31,4 +32,4 @@ export class SearchForm extends Component {
     }
 }
 
-export default SearchForm
+export default withRouter(SearchForm)

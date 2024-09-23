@@ -10,7 +10,7 @@ class MovieGrid extends Component {
     super(props);
     this.state = {
       url: props.url,
-      movies: null,
+      movies: [],
       limit: Number(props.limit),
     };
   }
@@ -30,7 +30,7 @@ class MovieGrid extends Component {
   render() {
     return (
       <section className="gridContainer">
-        {this.state.movies == null ? (
+        {this.state.movies.length == 0 ? (
           <Loader />
         ) : (
           this.state.movies.map((movie, idx) =>
