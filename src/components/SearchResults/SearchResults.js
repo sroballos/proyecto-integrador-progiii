@@ -16,7 +16,7 @@ export default class SearchResults extends Component {
     componentDidMount(){
 
         const search = this.props.location.search;
-        const query = search ? search.split('=')[1]: ''
+        const query = //¿Cómo obtengo la query de la URL?
 
         this.setState({
             isLoading:true,

@@ -28,11 +28,9 @@ class Header extends Component {
         <h2>Areté</h2>
         <ul className="user">
           <li>
-            Nombre usuario <img src="" alt="" />
+            <SearchForm/>
           </li>
         </ul>
-
-      <SearchForm/>
 
 
       </header>
