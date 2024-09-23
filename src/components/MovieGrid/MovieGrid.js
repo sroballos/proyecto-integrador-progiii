@@ -22,7 +22,6 @@ class MovieGrid extends Component {
         this.setState({
           movies: data.results
         });
-        console.log(data);
       })
       .catch((err) => console.log(err));
   }
