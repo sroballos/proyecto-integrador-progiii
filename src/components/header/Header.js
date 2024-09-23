@@ -2,6 +2,7 @@ import { Component } from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 import "./Header.css";
+import SearchForm from "../SearchForm/SearchForm";
 
 class Header extends Component {
   constructor() {
@@ -30,6 +31,10 @@ class Header extends Component {
             Nombre usuario <img src="" alt="" />
           </li>
         </ul>
+
+      <SearchForm/>
+
+
       </header>
     );
   }

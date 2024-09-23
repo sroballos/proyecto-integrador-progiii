@@ -1,6 +1,7 @@
 import {Component} from "react";
 import './SearchResults.css';
 import MovieGrid from "../MovieGrid/MovieGrid";
+import { options } from "../../options";
 
 export default class SearchResults extends Component {
     constructor(props){
@@ -13,10 +14,14 @@ export default class SearchResults extends Component {
     }
 
     componentDidMount(){
+
+        const search = this.props.location.search;
+        const query = search ? search.split('=')[1]: ''
+
         this.setState({
             isLoading:true,
         })
-        fetch()
+        fetch(`https://api.themoviedb.org/3/search/movie?query=${this.props.location.state.query}`, options)
         .then((response) => response.json())
         .then((data) =>{
             this.setState({
@@ -30,7 +35,7 @@ export default class SearchResults extends Component {
     render(){
         return(
             //<div>SearchResults {this.props.location.state.query}</div>
-            <div>
+            <div className="searchResults">
                 {!this.state.isLoading ? (<MovieGrid movies= {this.state.movies}/>) : (<p>Loading</p>)}
             </div>
         )

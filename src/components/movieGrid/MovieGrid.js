@@ -4,6 +4,7 @@ import Movie from "../Movie/Movie";
 import Loader from "../../components/Loader/Loader";
 import { options } from "../../options";
 
+
 class MovieGrid extends Component {
   constructor(props) {
     super(props);
@@ -46,6 +47,7 @@ class MovieGrid extends Component {
             )
           )
         )}
+
       </section>
     );
   }

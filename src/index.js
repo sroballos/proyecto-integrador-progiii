@@ -9,6 +9,7 @@ import MovieDetail from "./pages/MovieDetail";
 import Favoritos from "./pages/Favoritos";
 import Popular from "./pages/SeeAll/Popular";
 import Best from "./pages/SeeAll/Best";
+import SearchForm from "./components/SearchForm/SearchForm";
 import SearchResults from "./components/SearchResults/SearchResults";
 
 import { BrowserRouter, Switch, Route } from "react-router-dom";
@@ -26,6 +27,7 @@ root.render(
       <Route exact path="/favorites" component={Favoritos} />
       <Route exact path="/popular" component={Popular} />
       <Route exact path="/toprated" component={Best} />
+      <Route exact path="/" component={SearchForm} />
       <Route exact path="/SearchResults" component={SearchResults}/>
 
       {/* el NotFound va a lo último */}
