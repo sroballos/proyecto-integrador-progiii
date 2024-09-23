@@ -18,9 +18,10 @@ export default class SearchResults extends Component {
         const search = this.props.location.search;
         const query = //¿Cómo obtengo la query de la URL?
 
-        this.setState({
+        this.setState({ 
             isLoading:true,
         })
+
         fetch(`https://api.themoviedb.org/3/search/movie?query=${this.props.location.state.query}`, options)
         .then((response) => response.json())
         .then((data) =>{
@@ -34,10 +35,11 @@ export default class SearchResults extends Component {
 
     render(){
         return(
-            //<div>SearchResults {this.props.location.state.query}</div>
-            <div className="searchResults">
+           
+            <div>Resultado de buscqueda de:{this.props.location.state.query}
                 {!this.state.isLoading ? (<MovieGrid movies= {this.state.movies}/>) : (<p>Loading</p>)}
             </div>
+         
         )
     }
 }
