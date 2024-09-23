@@ -23,7 +23,7 @@ class Header extends Component {
             <Link to="/favorites">Favoritos</Link>
           </li>
           <li>
-            <Link to="/personajes">Ver todas</Link>
+            <Link to="/popular">Ver todas</Link>
           </li>
         </ul>
         <h2>Areté</h2>
