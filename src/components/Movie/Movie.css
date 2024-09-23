@@ -8,6 +8,7 @@
     max-width: 15%;
     min-width: 170px;
     box-shadow: 5px 5px 25px #ff8400;
+    margin-top: 20px;
 }
 
 .movieContainer img{

@@ -20,8 +20,7 @@ export class Popular extends Component {
     render() {
         return (
             <>
-            <button onClick={() => this.verMas()}>Ver Más</button>
-            {this.state.limit % 2 === 0 ? <><h1>Viendo {this.state.limit} películas</h1><MovieGrid url={`https://api.themoviedb.org/3/movie/popular?language=en-US&page=1`} limit = {this.state.limit} /> </> : <><h1>Viendo {this.state.limit} películas impares</h1><MovieGrid url={`https://api.themoviedb.org/3/movie/popular?language=en-US&page=1`} limit = {this.state.limit + 3} /></>}
+            {this.state.limit % 2 === 0 ? <><h1>Viendo {this.state.limit} películas</h1><button onClick={() => this.verMas()}>Ver Más</button><MovieGrid url={`https://api.themoviedb.org/3/movie/popular?language=en-US&page=1`} limit = {this.state.limit} /> </> : <><h1>Viendo {this.state.limit} películas impares</h1><button onClick={() => this.verMas()}>Ver Más</button><MovieGrid url={`https://api.themoviedb.org/3/movie/popular?language=en-US&page=1`} limit = {this.state.limit + 3} /></>}
             </>
         )
     }
