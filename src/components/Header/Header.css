@@ -1,0 +1,20 @@
+header{
+    width: 80%;
+}
+
+.arete{
+    border: 5px groove #038a94;
+    border-radius: 70px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.arete h2{
+    font-family: "Blue Ocean", sans-serif;
+    font-size: 5vw;
+    text-align: center;
+    margin: 5px;
+}
