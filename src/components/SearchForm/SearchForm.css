@@ -5,5 +5,13 @@ ul{
 
 .boton{
     width: 53% ;
-    
+}
+
+@media (max-width: 790px){
+    .boton{
+        width: 100%
+    }
+    input{
+        width: 100%;
+    }
 }

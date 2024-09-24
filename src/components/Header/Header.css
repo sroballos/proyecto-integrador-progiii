@@ -33,3 +33,15 @@ header h2{
 .main-nav li a:hover{
     color: white;
 }
+
+@media (max-width: 790px){
+    .separacion{
+        width: 30vw;
+    }
+    header{
+        flex-wrap: wrap;
+    }
+    .main-nav{
+        padding: 0px;
+    }
+}
