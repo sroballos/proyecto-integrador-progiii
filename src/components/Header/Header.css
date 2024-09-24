@@ -1,8 +1,5 @@
 header{
     width: 80%;
-}
-
-.arete{
     border: 5px groove #038a94;
     border-radius: 70px;
     padding: 5px;
@@ -12,13 +9,27 @@ header{
     margin-bottom: -20px;
 }
 
-
-.arete h2{
+header h2{
     font-family: "Blue Ocean", sans-serif;
     font-size: 5vw;
     text-align: center;
     margin: 5px;
 }
 
+.separacion{
+    display: flex;
+    width: 33.333333%;
+    justify-content: center;
+}
 
+.main-nav li{
+    padding-top:4px;
+}
 
+.main-nav li a{
+    text-decoration: none;
+}
+
+.main-nav li a:hover{
+    color: white;
+}
