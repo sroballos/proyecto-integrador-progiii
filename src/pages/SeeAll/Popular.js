@@ -10,7 +10,9 @@ export class Popular extends Component {
         super(props)
         this.state = {
             limit: 6,
-            movies: null
+            movies: null,
+            filteredMovies: [],
+            filterValue: ""
         }
     }
 
@@ -19,7 +21,8 @@ export class Popular extends Component {
           .then((response) => response.json())
           .then((data) => {
             this.setState({
-              movies: data.results
+              movies: data.results,
+              filteredMovies: data.results
             });
           })
           .catch((err) => console.log(err));
@@ -42,10 +45,22 @@ export class Popular extends Component {
 
     }
 
+
+    handleFilterChange(e){
+        const userValue= e.target.value
+
+        this.setState({
+            filterValue: userValue,
+            filteredMovies: this.state.movies.filter(movie => movie.title.toLowerCase().includes(userValue.toLowerCase()))
+        })
+
+    }
+
     render() {
         return (
             <>
-            {this.state.movies == null ? <Loader /> : <><h1>Viendo {this.state.limit} películas</h1><button onClick={() => this.verMas()}>Ver Más</button><MovieGrid movies = {this.state.movies} limit = {this.state.limit} />
+            <input type="text" onChange= {(e)=> this.handleFilterChange(e)} value={this.state.filterValue}/>
+            {this.state.movies == null ? <Loader /> : <><h1>Viendo {this.state.limit} películas</h1><button onClick={() => this.verMas()}>Ver Más</button><MovieGrid movies = {this.state.filteredMovies} limit = {this.state.limit} />
             <button onClick={() => this.verMas()}>Ver Más</button></>}
             
             </>
