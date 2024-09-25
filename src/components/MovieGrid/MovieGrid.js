@@ -12,8 +12,7 @@ class MovieGrid extends Component {
   }
 
   render() {
-
-    console.log(this.state.movies)
+    console.log(this.state.movies, this.state.limit)
     return (
       <section className="gridContainer">
         {this.state.movies.map((movie, idx) =>

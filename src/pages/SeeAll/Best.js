@@ -10,44 +10,42 @@ export class Best extends Component {
         super(props)
         this.state = {
             limit: 6,
-            movies: null
+            movies: null,
+            actualPage: 1
         }
     }
 
     componentDidMount() {
-        fetch("https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1", options)
+        fetch(`https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=${this.state.actualPage}`, options)
           .then((response) => response.json())
           .then((data) => {
             this.setState({
-              movies: data.results
+              movies: data.results,
+              actualPage: this.state.actualPage + 1
             });
           })
           .catch((err) => console.log(err));
       }
 
     verMas(){
-        this.setState({
-            limit: this.state.limit + 3,
-            actualPage: 1
-        });
-
-        fetch("https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1", options)
+        fetch(`https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=${this.state.actualPage}`, options)
         .then((response) => response.json())
         .then((data) => {
           this.setState({
-            movies: {} //this.state.movies.concat(data.results)
+            movies: this.state.movies.concat(data.results),
+            actualPage: this.state.actualPage + 1
           });
+          console.log(this.state.movies)
         })
         .catch((err) => console.log(err));
-
     }
 
     render() {
         return (
             <>
-            {this.state.movies == null ? <Loader /> : <><h1>Viendo {this.state.limit} películas</h1><button onClick={() => this.verMas()}>Ver Más</button><MovieGrid movies = {this.state.movies} limit = {this.state.limit} />
-            <button onClick={() => this.verMas()}>Ver Más</button></>}
-            
+            {this.state.movies == null ? <Loader /> : <><h2>TOP RATED</h2>
+            <button onClick={() => this.verMas()}>Ver Más</button> <h2>{this.state.actualPage}</h2>
+            <MovieGrid movies = {this.state.movies} limit = "100"/></>}
             </>
         )
     }
