@@ -13,8 +13,20 @@ class SearchResults extends Component {
   }
 
   componentDidMount() {
+    this.fetchMovies();
+  }
+
+  componentDidUpdate(propsPrevios) {  //el DidMount no se actualiza a menos que vuelvas a cargar el link
+    if (propsPrevios.location.state.query !== this.props.location.state.query) {
+      this.fetchMovies();
+    }
+  }
+
+  fetchMovies() {
+    const query = this.props.location.state.query.toLowerCase();
+
     fetch(
-      `https://api.themoviedb.org/3/search/movie?query=${this.props.location.state.query.toLowerCase()}&include_adult=false&language=en-US&page=1`,
+      `https://api.themoviedb.org/3/search/movie?query=${query}&include_adult=false&language=en-US&page=1`,
       options
     )
       .then((response) => response.json())
@@ -30,8 +42,11 @@ class SearchResults extends Component {
     return (
       <div className="searchResults">
         <h3>Resultado de búsqueda de: {this.props.location.state.query}</h3>
-        {this.state.movies === null ? <Loader /> :<MovieGrid movies={this.state.movies} limit="10" />}
-        
+        {this.state.movies === null ? (
+          <Loader />
+        ) : (
+          <MovieGrid movies={this.state.movies} limit="10" />
+        )}
       </div>
     );
   }
