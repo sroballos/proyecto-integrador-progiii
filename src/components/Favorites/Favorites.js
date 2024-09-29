@@ -1,8 +1,8 @@
-import { Component } from 'react';
-import Loader from '../Loader/Loader';
-import Movie from '../Movie/Movie';
-import { options } from '../../options';
-import NotFav from '../NoFav/NoFav';
+import { Component } from "react";
+import Loader from "../Loader/Loader";
+import Movie from "../Movie/Movie";
+import { options } from "../../options";
+import NotFav from "../NoFav/NoFav";
 
 export class Favoritos extends Component {
   constructor(props) {
@@ -14,25 +14,29 @@ export class Favoritos extends Component {
   }
 
   componentDidMount() {
-    const storage = localStorage.getItem('favoritos');
-    
+    const storage = localStorage.getItem("favoritos");
+
     if (storage !== null) {
       const parsedArray = JSON.parse(storage);
 
       Promise.all(
-        parsedArray.map((id) => 
-          fetch(`https://api.themoviedb.org/3/movie/${id}?language=en-US`, options)
-            .then(response => response.json())
+        parsedArray.map((id) =>
+          fetch(
+            `https://api.themoviedb.org/3/movie/${id}?language=en-US`,
+            options
+          ).then((response) => response.json())
         )
-      ).then((movies) => {
-        this.setState({
-          movies: movies,
-          isLoading: false
-        });
-      }).catch((err) => console.error(err));
+      )
+        .then((movies) => {
+          this.setState({
+            movies: movies,
+            isLoading: false,
+          });
+        })
+        .catch((err) => console.log(err));
     } else {
       this.setState({
-        isLoading: false
+        isLoading: false,
       });
     }
   }
@@ -53,7 +57,7 @@ export class Favoritos extends Component {
                 />
               ))
             ) : (
-              <NotFav/>
+              <NotFav />
             )}
           </section>
         ) : (

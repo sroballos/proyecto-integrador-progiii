@@ -1,16 +1,16 @@
-import './NoFav.css'
-import {Link} from "react-router-dom";
+import "./NoFav.css";
+import { Link } from "react-router-dom";
 
-const NoFav = () =>{
-    return (
-        <div className = "NoFav">
-            <h2>No hay favoritos</h2> 
+const NoFav = () => {
+  return (
+    <div className="NoFav">
+      <h2>No hay favoritos</h2>
 
-            <Link to="/" className="botoncito"><button>Encontrá películas</button></Link>
+      <Link to="/" className="botoncito">
+        <button>Encontrá películas</button>
+      </Link>
+    </div>
+  );
+};
 
-        </div>
-    )
-}
-
-
-export default NoFav
+export default NoFav;

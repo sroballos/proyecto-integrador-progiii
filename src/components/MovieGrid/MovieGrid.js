@@ -1,7 +1,7 @@
 import "./MovieGrid.css";
 import Movie from "../Movie/Movie";
 
-const MovieGrid = ({movies, limit}) => {
+const MovieGrid = ({ movies, limit }) => {
   return (
     <section className="gridContainer">
       {movies.map((movie, idx) =>
@@ -19,6 +19,6 @@ const MovieGrid = ({movies, limit}) => {
       )}
     </section>
   );
-}
+};
 
 export default MovieGrid;

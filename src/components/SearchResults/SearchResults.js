@@ -16,7 +16,8 @@ class SearchResults extends Component {
     this.fetchMovies();
   }
 
-  componentDidUpdate(propsPrevios) {  //el DidMount no se actualiza a menos que vuelvas a cargar el link
+  componentDidUpdate(propsPrevios) {
+    //el DidMount no se actualiza a menos que vuelvas a cargar el link
     if (propsPrevios.location.state.query !== this.props.location.state.query) {
       this.fetchMovies();
     }

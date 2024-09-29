@@ -4,8 +4,9 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import "./Movie.css";
 
 class Movie extends Component {
-  constructor({ title, desc, img, id }) {
-    super(title, desc, img, id);
+  constructor(props) {
+    super(props);
+    const { title, desc, img, id } = props;
     this.state = {
       title: title,
       desc: desc,
@@ -70,18 +71,17 @@ class Movie extends Component {
         this.state.img == null ||
         this.state.id == null ? (
           <section className="movieContainer">
-          <img src='../../images/img-no-encontrada.png' alt='API error'></img>
-          <h2 className="title">API error</h2>
+            <img src="../../images/img-no-encontrada.png" alt="API error"></img>
+            <h2 className="title">API error</h2>
           </section>
         ) : (
           <section className="movieContainer">
-            <Link
-              to={`/detail/${this.state.id}`}
-            >
-            <img
-              src={`https://image.tmdb.org/t/p/w342/${this.state.img}.jpg`}
-              alt={this.state.title}
-            ></img></Link>
+            <Link to={`/detail/${this.state.id}`}>
+              <img
+                src={`https://image.tmdb.org/t/p/w342/${this.state.img}.jpg`}
+                alt={this.state.title}
+              ></img>
+            </Link>
             <h2 className="title">{this.state.title}</h2>
             {this.state.hidden ? (
               <button onClick={() => this.hideHandler()}>

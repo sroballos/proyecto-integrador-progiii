@@ -44,7 +44,7 @@ class MovieDetail extends Component {
       .then((data) => {
         this.setState({ data: data });
       })
-      .catch((err) => console.error(err));
+      .catch((err) => console.log(err));
 
 
     //fav

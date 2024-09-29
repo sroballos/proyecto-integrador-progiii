@@ -1,9 +1,9 @@
 import { Component } from "react";
 import MovieGrid from "../../components/MovieGrid/MovieGrid";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
-import Loader from "../../components/Loader/Loader"
+import Loader from "../../components/Loader/Loader";
 import "./Home.css";
-import {options} from "../../options"
+import { options } from "../../options";
 
 class Home extends Component {
   constructor(props) {
@@ -27,17 +27,17 @@ class Home extends Component {
       })
       .catch((err) => console.log(err));
 
-      fetch(
-        "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1",
-        options
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          this.setState({
-            bestMovies: data.results,
-          });
-        })
-        .catch((err) => console.log(err));
+    fetch(
+      "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1",
+      options
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({
+          bestMovies: data.results,
+        });
+      })
+      .catch((err) => console.log(err));
   }
 
   render() {
@@ -47,21 +47,26 @@ class Home extends Component {
         <Link to="/popular">
           <button className="verTodas">Ver Todas</button>
         </Link>
-        {this.state.popularMovies == null ? <Loader /> : <><MovieGrid
-          movies = {this.state.popularMovies}
-          limit="5"
-        /></>}
-        
+        {this.state.popularMovies == null ? (
+          <Loader />
+        ) : (
+          <>
+            <MovieGrid movies={this.state.popularMovies} limit="5" />
+          </>
+        )}
 
         <h3 className="intro">Top Rated</h3>
         <Link to="/toprated">
           <button className="verTodas">Ver Todas</button>
         </Link>
 
-        {this.state.bestMovies == null ? <Loader /> : <><MovieGrid
-          movies = {this.state.bestMovies}
-          limit="5"
-        /></>}
+        {this.state.bestMovies == null ? (
+          <Loader />
+        ) : (
+          <>
+            <MovieGrid movies={this.state.bestMovies} limit="5" />
+          </>
+        )}
       </>
     );
   }
