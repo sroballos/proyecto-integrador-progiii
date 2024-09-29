@@ -1,18 +1,9 @@
-import { Component } from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 import "./Header.css";
 import SearchForm from "../SearchForm/SearchForm";
-import { withRouter } from "react-router-dom";
 
-class Header extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      test: true,
-    };
-  }
-  render() {
+const Header = () => {
     return (
       <header>
         <div className="separacion">
@@ -41,6 +32,5 @@ class Header extends Component {
       </header>
     );
   }
-}
 
-export default withRouter(Header);
+export default Header;
