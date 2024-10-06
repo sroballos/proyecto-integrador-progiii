@@ -3,7 +3,7 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import "./Header.css";
 import SearchForm from "../SearchForm/SearchForm";
 
-const Header = () => {
+const Header = (props) => {
     return (
       <header>
         <div className="separacion">
@@ -25,7 +25,7 @@ const Header = () => {
         <div className="separacion">
           <ul>
             <li>
-              <SearchForm history={this.props.history} />
+              <SearchForm history={props.history} />
             </li>
           </ul>
         </div>
